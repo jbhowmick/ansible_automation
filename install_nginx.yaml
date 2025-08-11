@@ -1,0 +1,19 @@
+---
+- name: Install and setup nginx
+  hosts: all
+  become: true
+  connection: ssh  
+  gather_facts: false
+
+  tasks:
+    - name : Install nginx
+      apt:
+        name: nginx 
+        state: present 
+
+
+    - name: Start nginx service after install
+      service: 
+        name: nginx
+        state: started
+        enabled: true
