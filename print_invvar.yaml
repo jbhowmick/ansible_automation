@@ -1,0 +1,13 @@
+---
+-  name: Print all inventory variables
+   hosts: localhost
+   gather_facts: no
+   vars:
+    country: india  
+
+
+   tasks:
+   - name: Print var 
+     debug:
+       #var: country
+       msg: "printing var name {{ country }}"

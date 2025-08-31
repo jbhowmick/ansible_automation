@@ -1,0 +1,14 @@
+---
+- name: Update and upgrade system
+  hosts: all
+  become: yes 
+  gather_facts: false
+
+  tasks:
+    - name: Update ubuntu
+      apt:
+        upgrade: dist
+
+    - name: Remove unwanted packages
+      apt:
+        autoremove: yes

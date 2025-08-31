@@ -1,0 +1,10 @@
+---
+-  name: Reboot remote system
+   hosts: all
+   become: yes
+   
+
+   tasks:
+    -  name: Reboot remote system
+       ansible.builtin.reboot:
+          msg: "Rebooting machine in 5 seconds"
